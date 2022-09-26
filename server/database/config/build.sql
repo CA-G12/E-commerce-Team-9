@@ -19,11 +19,11 @@ CREATE TABLE products(
 );
 
 CREATE TABLE cart(
-  id SERIAL PRIMARY KEY,
   user_id INT,
   product_id INT,
+  -- CONSTRAINT pkey PRIMARY KEY (user_id, product_id),
   FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
-  CONSTRAINT fk_cart_product FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
+  FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
 );
 
 COMMIT;
