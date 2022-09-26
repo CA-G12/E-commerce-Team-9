@@ -17,7 +17,7 @@ app.disable('x-powered-by');
 // app.use(express.static(join(__dirname, '..', 'client', 'build')));
 app.set('port', process.env.PORT || 4000);
 
-// app.use("/api/v1", router)
+app.use('/api/v1', router);
 
 app.get('/hello', (req, res) => {
   console.log('hhhh');
