@@ -1,5 +1,9 @@
 const connection = require('../../config/connection');
 
-const addNewProductToCartQuery = (userId, productId) => connection.query('INSERT INTO cart(user_id, product_id) VALUES ($1, $2) RETURNING *', [userId, productId]);
+let count = 0;
+const addNewProductToCartQuery = (userId, productId) => {
+  count += 1;
+  return connection.query('INSERT INTO cart(user_id, product_id, count) VALUES ($1, $2, $3) ON CONFLICT (user_id, product_id) DO UPDATE SET  count = $3 RETURNING *', [userId, productId, count]);
+};
 
 module.exports = addNewProductToCartQuery;

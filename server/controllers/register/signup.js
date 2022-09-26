@@ -29,12 +29,12 @@ const signup = (req, res) => {
       return generateToken({ userID: payload.id });
     })
     .then((jwt) => { res.cookie('token', jwt, { httpOnly: true, secure: true }); res.json({ message: 'Account created successfully' }); })
-    .catch((err) => {
-      if (err.name === 'ValidationError') {
-        res.status(400).send({ message: err.message });
-      }
-      // res.status(err.status || 500).json({ message: err.message || 'Internal Server Error' });
-    });
+  // .catch((err) => {
+  //   if (err.name === 'ValidationError') {
+  //     res.status(400).send({ message: err.message });
+  //   }
+  //   // res.status(err.status || 500).json({ message: err.message || 'Internal Server Error' });
+  // });
 };
 
 module.exports = signup;

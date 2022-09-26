@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { verify } = require('jsonwebtoken');
 
 const { SECRET_KEY } = process.env;

@@ -24,6 +24,7 @@ app.get('/hello', (req, res) => {
 
 app.use((err, req, res, next) => {
   console.log('server error');
+  console.log(err)
   next();
 });
 
