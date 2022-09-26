@@ -1,3 +1,14 @@
-const { getUserProductsById, deleteProductById, addNewProductToCart } = require('./products');
+const {
+  getAllProducts, getUserProductsById, deleteProductById, addNewProductToCart,
+} = require('./products');
 
-module.exports = { getUserProductsById, deleteProductById, addNewProductToCart };
+const { signup, login } = require('./register');
+
+module.exports = {
+  getUserProductsById,
+  deleteProductById,
+  addNewProductToCart,
+  getAllProducts,
+  signup,
+  login,
+};

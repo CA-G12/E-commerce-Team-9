@@ -1,3 +1,15 @@
-const { getUserProductsByIdQuery, deleteProductByIdQuery, addNewProductToCartQuery } = require('./products');
+const {
+  getAllProductsQuery, getUserProductsByIdQuery, deleteProductByIdQuery, addNewProductToCartQuery,
+} = require('./products');
 
-module.exports = { getUserProductsByIdQuery, deleteProductByIdQuery, addNewProductToCartQuery };
+const { signupQuery, selectUserByEmail, loginQuery } = require('./register');
+
+module.exports = {
+  getUserProductsByIdQuery,
+  deleteProductByIdQuery,
+  addNewProductToCartQuery,
+  getAllProductsQuery,
+  signupQuery,
+  loginQuery,
+  selectUserByEmail,
+};
