@@ -2,9 +2,9 @@
 const { getUserProductsByIdQuery } = require('../../database/queries');
 
 const getUserProductsById = (req, res) => {
-  const { userId } = req.params;
-  getUserProductsByIdQuery(userId)
-    .then((data) => res.status(200).send(data.rows))
+  const { id } = req.token;
+  getUserProductsByIdQuery(id)
+    .then((data) => res.status(200).send(data.rows[0]))
     .catch((err) => console.log(err));
 };
 

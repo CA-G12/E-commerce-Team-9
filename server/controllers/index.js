@@ -2,7 +2,7 @@ const {
   getAllProducts, getUserProductsById, deleteProductById, addNewProductToCart,
 } = require('./products');
 
-const { signup, login } = require('./register');
+const { signup, login, logout } = require('./register');
 
 module.exports = {
   getUserProductsById,
@@ -11,4 +11,5 @@ module.exports = {
   getAllProducts,
   signup,
   login,
+  logout,
 };

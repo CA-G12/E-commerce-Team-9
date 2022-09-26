@@ -1,16 +1,18 @@
 const router = require('express').Router();
 
+const verifyToken = require('../middlewares/verifyToken');
 const {
-  login, signup, getUserProductsById, deleteProductById, addNewProductToCart,
+  login, signup, logout, getUserProductsById, deleteProductById, addNewProductToCart,
 } = require('../controllers');
 const getProducts = require('./products');
 
-router.get('/produtcs/:userId', getUserProductsById);
-router.post('/products/:newProductId', addNewProductToCart);
+router.get('/userProducts', verifyToken, getUserProductsById);
+router.post('/products/:productId', verifyToken, addNewProductToCart);
 router.use('/products', getProducts);
-router.delete('/products/:productId', deleteProductById);
+router.delete('/products/:productId', verifyToken, deleteProductById);
 
 router.post('/signup', signup);
 router.post('/login', login);
+router.post('/logout', logout);
 
 module.exports = router;
