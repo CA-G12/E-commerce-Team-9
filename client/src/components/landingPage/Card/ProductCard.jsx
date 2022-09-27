@@ -16,7 +16,7 @@ function ProductCard({ data }) {
       </div>
       <div className="show-details">
         <p>{data.category}</p>
-        {/* <Link to="/" onClick={() => console.log(card)}>Details</Link> */}
+        <button type="button">Details</button>
       </div>
     </div>
   );
