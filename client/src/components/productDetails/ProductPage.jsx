@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../style/details.css';
+import Header from '../landingPage/Header';
 
 function ProductDetails() {
   const [data, setData] = useState(null);
@@ -17,27 +18,32 @@ function ProductDetails() {
 
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="details">
-      <img src={data.image} alt={data.name} className="product-img" />
-      <div className="product-details">
-        <h1>{data.name}</h1>
-        <p className="price">
-          Price:
-          <span>
+    <>
+      <Header />
+      <div className="details">
+        <img src={data.image} alt={data.name} className="product-img" />
+        <div className="product-details">
+          <h1>{data.name}</h1>
+          <p className="price">
+            Price:
+            <span>
+              {' '}
+              {data.price}
+            </span>
+            $
+          </p>
+          <p className="category">
+            Category:
             {' '}
-            {data.price}
-          </span>
-          $
-        </p>
-        <p className="category">
-          Category:
-          {' '}
-          <span>{data.category}</span>
-        </p>
-        <p className="description">{data.description}</p>
-        <button type="submit">Add To Chart</button>
+            <span>{data.category}</span>
+          </p>
+          <p className="description">{data.description}</p>
+          <button type="submit">Add To Chart</button>
+        </div>
       </div>
-    </div>
+
+    </>
+
   );
 }
 
