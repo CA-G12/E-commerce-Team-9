@@ -7,7 +7,7 @@
   font-family: "Inter", sans-serif;
 }
 
-.App {
+#root {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -15,8 +15,25 @@
   flex-direction: column;
 }
 
-.container {
-  margin-top: 2rem;
+section.container {
+  margin: 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+}
+
+section.container aside {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  background: #FDFDFD;
+  border: 1px solid #006637;
+  border-radius: 10px;
+}
+
+.cards {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -25,12 +42,48 @@
   gap: 1rem;
 }
 
-.container .card {
-  width: 35%;
+.cards .card {
+  width: 200px;
   border: 1px solid #006637;
   border-radius: 5px;
 }
 
+.container .product-name {
+  padding: 0.3rem;
+}
+
+.container .product-name h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.container .product-name p {
+  padding-top: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #006637;
+}
+
 .container .card img {
   width: 100%;
+}
+
+.container .show-details {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .show-details p {
+  font-size: 0.8rem;
+}
+
+.container .show-details button {
+  color: #fff;
+  background-color: #006637;
+  border: 0;
+  padding: 0.3rem 1rem;
+  font-size: 0.75rem;
+  cursor: pointer;
 }
