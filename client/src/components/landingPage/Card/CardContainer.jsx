@@ -1,21 +1,14 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types */
 import ProductCard from './ProductCard';
 import '../../../style/card.css';
 
-function CardContainer() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/v1/products')
-      .then((res) => res.json())
-      .then((result) => setData(result));
-  }, []);
-
+function CardContainer({ data, category }) {
   if (!data) return <div>Loading...</div>;
 
   return (
     <div className="cards">
-      {data.map((ele) => <ProductCard data={ele} />)}
+      {category !== 'all' ? data.filter((element) => element.category === category).map((e) => <ProductCard data={e} key={e.id} />)
+        : data.map((ele) => <ProductCard data={ele} key={ele.id} />)}
     </div>
   );
 }
