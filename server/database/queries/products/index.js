@@ -2,6 +2,7 @@ const getUserProductsByIdQuery = require('./getUserProductsById');
 const deleteProductByIdQuery = require('./deleteProductById');
 const addNewProductToCartQuery = require('./addNewProductToCart');
 const getAllProductsQuery = require('./getAllProductsQuery');
+const getProductDetailsByIdQuery = require('./getProductDetails');
 const FilterProductsByCategoryQuery = require('./filterProductCategoryQuery');
 const { filterPriceAscQuery, filterPriceDescQuery } = require('./filterByPriceQuery');
 
@@ -13,4 +14,5 @@ module.exports = {
   deleteProductByIdQuery,
   addNewProductToCartQuery,
   getAllProductsQuery,
+  getProductDetailsByIdQuery,
 };

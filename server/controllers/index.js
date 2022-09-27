@@ -1,5 +1,6 @@
 const {
   getAllProducts, getUserProductsById, deleteProductById, addNewProductToCart,
+  getProductDetailsById,
   filterProductsByCategory,
   filterPriceAsc,
   filterPriceDesc,
@@ -15,6 +16,7 @@ module.exports = {
   deleteProductById,
   addNewProductToCart,
   getAllProducts,
+  getProductDetailsById,
   signup,
   login,
   logout,
