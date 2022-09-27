@@ -19,13 +19,15 @@ section.container {
   width: 100%;
   margin: 2rem 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(12, 1fr);
 
 }
 
 section.container aside {
+  grid-column-start: 1;
+  grid-column-end: 4;
   margin-left: 2rem;
-  width: 40%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -35,6 +37,8 @@ section.container aside {
 }
 
 .cards {
+  grid-column-start: 6;
+  grid-column-end: 13;
   width: 100%;
   display: flex;
   justify-content: flex-start;

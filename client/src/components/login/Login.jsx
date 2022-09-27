@@ -34,7 +34,11 @@ function Login() {
 
   return (
     <div className="main">
-      <img className="logo" src={image} alt="Asos-black-logo" />
+      <Link to="/">
+        {' '}
+        <img className="logo" src={image} alt="Asos-black-logo" />
+      </Link>
+
       <div className="form">
         <div className="headerForm">
           <Link to="/signup" className="seconde">JOIN</Link>

@@ -6,7 +6,7 @@ function Header() {
   return (
     <header>
       <div>
-        <Link to="/products"><img src={image} alt="" className="logo" /></Link>
+        <Link to="/"><img src={image} alt="" className="logo" /></Link>
       </div>
       <input type="text" placeholder="Search..." />
       <div className="get-started">

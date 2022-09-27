@@ -7,7 +7,7 @@ function CardContainer({ data, category }) {
 
   return (
     <div className="cards">
-      {category !== 'all' ? data.filter((element) => element.category === category).map((e) => <ProductCard data={e} key={e.id} />)
+      {category !== 'all' ? data.filter((element) => element.category.toLowerCase() === category.toLowerCase()).map((e) => <ProductCard data={e} key={e.id} />)
         : data.map((ele) => <ProductCard data={ele} key={ele.id} />)}
     </div>
   );
