@@ -1,10 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
+import Header from './components/landingPage/Header';
+import LandingPage from './components/landingPage/LandingPage';
+import './style/card.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <LandingPage />,
+    children: [{
+      path: '/',
+      element: <Header />,
+    },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );

@@ -6,9 +6,9 @@ const {
 } = require('../controllers');
 const getProducts = require('./products');
 
+router.use('/products', getProducts);
 router.get('/userProducts', verifyToken, getUserProductsById);
 router.post('/products/:productId', verifyToken, addNewProductToCart);
-router.use('/products', getProducts);
 router.delete('/products/:productId', verifyToken, deleteProductById);
 
 router.post('/signup', signup);

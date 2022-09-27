@@ -9,7 +9,6 @@ app.use(compression());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/api/v1', router);
 app.disable('x-powered-by');
 
 // app.use(express.static(join(__dirname, '..', 'client', 'build')));
@@ -24,7 +23,7 @@ app.get('/hello', (req, res) => {
 
 app.use((err, req, res, next) => {
   console.log('server error');
-  console.log(err)
+  console.log(err);
   next();
 });
 
