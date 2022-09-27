@@ -1,6 +1,7 @@
 const express = require('express');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
 const router = require('./routers');
 
 const app = express();
@@ -16,6 +17,9 @@ app.set('port', process.env.PORT || 4000);
 
 app.use('/api/v1', router);
 
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 app.get('/hello', (req, res) => {
   console.log('hhhh');
   res.json({ msg: 'Hi' });

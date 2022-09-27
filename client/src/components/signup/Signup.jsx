@@ -4,7 +4,7 @@ import '../../style/signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import asos from './Asos-black-logo.png';
+import image from './Asos-black-logo.png';
 
 function Signup() {
   const [email, setEmail] = useState('');
@@ -35,7 +35,7 @@ function Signup() {
 
   return (
     <div className="main">
-      <Link to="/"><img className="logo" src={asos} alt="Asos-black-logo" /></Link>
+      <Link to="/"><img className="logo" src={image} alt="Asos-black-logo" /></Link>
       <div className="form">
         <div className="headerForm">
           <Link to="//" className="check seconde">JOIN</Link>
