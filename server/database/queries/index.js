@@ -1,5 +1,6 @@
 const {
   getAllProductsQuery, getUserProductsByIdQuery, deleteProductByIdQuery, addNewProductToCartQuery,
+  getProductDetailsByIdQuery,
   FilterProductsByCategoryQuery,
   filterPriceDescQuery,
   filterPriceAscQuery,
@@ -14,6 +15,7 @@ module.exports = {
   deleteProductByIdQuery,
   addNewProductToCartQuery,
   getAllProductsQuery,
+  getProductDetailsByIdQuery,
   signupQuery,
   loginQuery,
   selectUserByEmail,
