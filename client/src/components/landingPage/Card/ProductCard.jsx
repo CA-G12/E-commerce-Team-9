@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import '../../../style/card.css';
 
 function ProductCard({ data }) {
@@ -16,7 +17,8 @@ function ProductCard({ data }) {
       </div>
       <div className="show-details">
         <p>{data.category}</p>
-        <button type="button">Details</button>
+        <Link to={`/product/${data.id}/details`}><button type="button">Details</button></Link>
+
       </div>
     </div>
   );
