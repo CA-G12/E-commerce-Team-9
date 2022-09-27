@@ -34,11 +34,11 @@ function LandingPage() {
   };
 
   const changeAscending = () => {
-    setPriceAsc(true);
+    setPriceAsc(!priceAsc);
   };
 
   const changeDescending = () => {
-    setPriceDesc(true);
+    setPriceDesc(!priceDesc);
   };
 
   return (
