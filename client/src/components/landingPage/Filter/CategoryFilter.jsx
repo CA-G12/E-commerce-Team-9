@@ -5,8 +5,9 @@ const categories = [
   'Jeans',
   'Shoes',
   'Bags',
-  'Skirts',
+  'Accessories',
 ];
+
 function CategoryFilter() {
   return (
     <section className="category">
