@@ -3,7 +3,7 @@ import '../../../style/card.css';
 
 function CardContainer() {
   return (
-    <div className="container">
+    <div className="cards">
       <ProductCard />
     </div>
   );

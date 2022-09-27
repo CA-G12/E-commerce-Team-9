@@ -10,7 +10,7 @@ const {
 const getProducts = require('./products');
 
 router.use('/products', getProducts);
-router.get('/userProducts', verifyToken, getUserProductsById);
+router.get('/cart', verifyToken, getUserProductsById);
 router.post('/products/:productId', verifyToken, addNewProductToCart);
 router.delete('/products/:productId', verifyToken, deleteProductById);
 router.get('/products/:category', filterProductsByCategory);

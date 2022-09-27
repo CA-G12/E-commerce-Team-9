@@ -47,7 +47,8 @@ header input {
   align-items: center;
 }
 
-.get-started button {
+.get-started a {
+  text-decoration: none;
   cursor: pointer;
   background-color: transparent;
   color: #fff;
@@ -60,4 +61,60 @@ header input {
 .get-started i {
   color: #fff;
   cursor: pointer;
+}
+
+section.category {
+  height: 60vh;
+  color: #333333;
+}
+
+section.category h4 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #006637;
+}
+
+.category-list {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.category-list label input {
+  margin: 0 0.5rem;
+}
+
+.category-list label {
+  padding: 0.4rem 0;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.price h4 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #006637;
+}
+
+.range label {
+  margin: 1rem 0 0;
+}
+
+.range label input {
+  padding: 0.5rem 1rem;
 }
