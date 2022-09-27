@@ -7,7 +7,6 @@ import {
 import LandingPage from './components/landingPage/LandingPage';
 import Signup from './components/signup/Signup';
 import Login from './components/login/Login';
-import CategoryFilter from './components/landingPage/Filter/CategoryFilter';
 
 const router = createBrowserRouter([
   {
@@ -21,14 +20,6 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
-  },
-  {
-    path: '/products',
-    element: <LandingPage />,
-    children: [{
-      path: '/products/:category',
-      element: <CategoryFilter />,
-    }],
   },
 
 ]);
