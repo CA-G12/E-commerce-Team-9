@@ -21,7 +21,7 @@ CREATE TABLE products(
 CREATE TABLE cart(
   user_id INT,
   product_id INT,
-  count INT DEFAULT 0,
+  count INT DEFAULT 1,
   CONSTRAINT pkey PRIMARY KEY (user_id, product_id),
   FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
   FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
