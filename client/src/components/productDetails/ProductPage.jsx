@@ -58,7 +58,7 @@ function ProductDetails() {
           <h1>{data.name}</h1>
           <p className="detailsPrice">
             Price:
-            <span>
+            <span className="span">
               {' '}
               {data.price}
               $
@@ -67,7 +67,7 @@ function ProductDetails() {
           <p className="detailsCategory">
             Category:
             {' '}
-            <span>{data.category}</span>
+            <span className="span">{data.category}</span>
           </p>
           <p className="detailsDescription">{data.description}</p>
           <button className="addToCart" type="submit" onClick={confirmAdding}>Add To Chart</button>
