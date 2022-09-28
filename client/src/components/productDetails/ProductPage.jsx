@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -6,6 +7,7 @@ import Header from '../landingPage/Header';
 
 function ProductDetails() {
   const [data, setData] = useState(null);
+  const [counter, setCounter] = useState(false);
   const { productId } = useParams();
 
   useEffect(() => {
@@ -14,8 +16,20 @@ function ProductDetails() {
       .catch((err) => console.log('err', err));
   }, []);
 
-  console.log(data);
+  useEffect(() => {
+    if (!counter) return;
+    axios({
+      method: 'post',
+      url: `/api/v1/products/${productId}`,
+    }).then((res) => {
+      setCounter(false);
+      console.log(res.data);
+    });
+  }, [counter]);
 
+  const confirmAdding = () => {
+    setCounter(window.confirm('You want to add it to cart?'));
+  };
   if (!data) return <div>Loading ...</div>;
   return (
     <>
@@ -38,7 +52,7 @@ function ProductDetails() {
             <span>{data.category}</span>
           </p>
           <p className="description">{data.description}</p>
-          <button type="submit">Add To Chart</button>
+          <button type="submit" onClick={confirmAdding}>Add To Chart</button>
         </div>
       </div>
 
