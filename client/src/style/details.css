@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
-
-* {
-  font-family: "Inter", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600&display=swap');
 
 .details {
   display: flex;
@@ -16,36 +13,60 @@
 }
 
 .details img {
-  width: 30%;
+  width: 40%;
   object-fit: cover;
+  margin-right: 4rem;
 }
 
 .details .product-details {
   width: 50%;
-  padding: 0 3rem;
+  padding: 0.5rem 2rem;
+  border-left: 1px solid rgba(0, 102, 55, 0.1);;
 }
 
-h1, .price, .category, .description {
-  padding-bottom: 2rem;
+.details .product-details h1 {
+  font-family: 'Cairo', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  color:rgba(0, 102, 55, 0.9);
+  margin-bottom: .5rem;
+  line-height: 1.4;
 }
 
-.price, .category, .description {
-  font-size: 1.1rem;
-  font-weight: 700;
+.details .product-details p.detailsPrice,
+.details .product-details p.detailsCategory
+ {
+  font-weight: 600;
 }
 
-.details button {
+.detailsPrice, .detailsCategory, .description {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.2rem;
+}
+
+.details .detailsDescription {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1rem;
+  margin-top: 2rem;
+  font-weight: 400;
+}
+
+.details .addToCart {
   background-color: #006637;
   color: #FFF;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 2.5rem;
   padding: 1rem 7rem;
-  cursor: pointer;
   border: 1px solid #EEE;
+  cursor: pointer;
+  border-radius: 0.3rem;
 }
 
-.product-details span {
+.details .addToCart:hover {
+  background-color: rgba(0, 102, 55, 0.8);
+}
+
+/* .product-details span {
   color: #006637;
   font-weight: 500;
-  /* font-size: 1.1rem; */
-}
+} */

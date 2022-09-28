@@ -47,7 +47,6 @@ function ProductDetails() {
         );
       }
     });
-    // setCounter(window.confirm('You want to add it to cart?'));
   };
   if (!data) return <div>Loading ...</div>;
   return (
@@ -57,21 +56,21 @@ function ProductDetails() {
         <img src={data.image} alt={data.name} className="product-img" />
         <div className="product-details">
           <h1>{data.name}</h1>
-          <p className="price">
+          <p className="detailsPrice">
             Price:
             <span>
               {' '}
               {data.price}
+              $
             </span>
-            $
           </p>
-          <p className="category">
+          <p className="detailsCategory">
             Category:
             {' '}
             <span>{data.category}</span>
           </p>
-          <p className="description">{data.description}</p>
-          <button type="submit" onClick={confirmAdding}>Add To Chart</button>
+          <p className="detailsDescription">{data.description}</p>
+          <button className="addToCart" type="submit" onClick={confirmAdding}>Add To Chart</button>
         </div>
       </div>
 
