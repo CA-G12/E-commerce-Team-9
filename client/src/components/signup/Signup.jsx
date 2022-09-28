@@ -4,6 +4,7 @@ import '../../style/signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import image from './Asos-black-logo.png';
 
 function Signup() {
@@ -28,7 +29,23 @@ function Signup() {
       },
     }).then((res) => {
       if (res.status === 200) {
-        navigate('/');
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          },
+        });
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed up successfully',
+        });
+        navigate('/login');
       }
     }).catch((err) => console.log(err));
   }, [submit]);

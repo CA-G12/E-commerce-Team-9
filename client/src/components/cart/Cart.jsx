@@ -1,50 +1,83 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import '../../style/cart.css';
-import image from './chambraysky.png';
+import Header from '../landingPage/Header';
 
 function Cart() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    axios.get('/api/v1/cart').then((res) => setData(res.data));
+  }, []);
+
+  const deleteProdcut = (id) => {
+    axios({
+      method: 'delete',
+      url: `/api/v1/products/${id}`,
+    }).then(() => {
+      setData(data.filter((dd) => dd.id !== id));
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        },
+      });
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Deleted successfully',
+      });
+    }).catch((err) => console.log(err));
+  };
+
+  if (!data) return <div>Loading ...</div>;
+
   return (
-    <div id="cart">
-      <div className="cart-product">
-        <img src={image} alt="" />
-        <div className="cart-info">
-          <div className="info">
-            <h1>Product Name</h1>
-            <div className="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas reiciendis deserunt corrupti quos magni illo blanditiis suscipit earum assumenda asperiores!</div>
-            <div className="price">
-              Price:
-              <span> 500</span>
-              {' '}
-              $
+    <>
+      <Header />
+      <div id="cart">
+        {data.map((ele) => (
+          <div className="cart-product" key={ele.id}>
+            <img src={ele.image} alt={ele.name} />
+            <div className="cart-info">
+              <div className="info">
+                <h1>{ele.name}</h1>
+                <div className="description">{ele.description}</div>
+                <div className="price">
+                  Price:
+                  <span>
+                    {' '}
+                    {ele.price}
+                  </span>
+                  {' '}
+                  $
+                </div>
+                <div className="quantity">
+                  Quantity:
+                  <span>
+                    {' '}
+                    {ele.count}
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="quantity">
-              Quantity:
-              <span> 2</span>
-            </div>
+            <button type="button" onClick={() => deleteProdcut(ele.id)}>
+              <i
+                className="fa-solid fa-trash"
+
+              />
+            </button>
+
           </div>
-        </div>
-        <i className="fa-solid fa-trash" />
+        ))}
       </div>
-      <div className="cart-product">
-        <img src={image} alt="" />
-        <div className="cart-info">
-          <div className="info">
-            <h1>Product Name</h1>
-            <div className="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas reiciendis deserunt corrupti quos magni illo blanditiis suscipit earum assumenda asperiores!</div>
-            <div className="price">
-              Price:
-              <span> 500</span>
-              {' '}
-              $
-            </div>
-            <div className="quantity">
-              Quantity:
-              <span> 2</span>
-            </div>
-          </div>
-        </div>
-        <i className="fa-solid fa-trash" />
-      </div>
-    </div>
+    </>
   );
 }
 
