@@ -2,6 +2,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import '../../style/details.css';
 import Header from '../landingPage/Header';
 
@@ -28,7 +29,25 @@ function ProductDetails() {
   }, [counter]);
 
   const confirmAdding = () => {
-    setCounter(window.confirm('You want to add it to cart?'));
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to add this!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, add it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setCounter(result.isConfirmed);
+        Swal.fire(
+          'Added!',
+          'Your product has been added.',
+          'success',
+        );
+      }
+    });
+    // setCounter(window.confirm('You want to add it to cart?'));
   };
   if (!data) return <div>Loading ...</div>;
   return (

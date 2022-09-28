@@ -24,8 +24,7 @@
     "morgan": "^1.10.0",
     "node-fetch": "^3.2.10",
     "pg": "^8.8.0",
-    "supertest": "^6.2.4",
-    "sweet-alert": "^2.0.5"
+    "supertest": "^6.2.4"
   },
   "devDependencies": {
     "eslint": "^8.24.0",
