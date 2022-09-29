@@ -7,10 +7,10 @@ function Aside({
   category, changeCategory, price, changeAscending, changeDescending,
 }) {
   return (
-    <aside>
+    <section className="nav">
       <CategoryFilter changeCategory={changeCategory} category={category} />
       <PriceFilter priceAsc={price} ascending={changeAscending} descending={changeDescending} />
-    </aside>
+    </section>
   );
 }
 

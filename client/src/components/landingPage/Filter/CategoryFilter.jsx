@@ -12,8 +12,8 @@ const categories = [
 
 function CategoryFilter({ changeCategory, category }) {
   return (
-    <section className="category">
-      <h4>Categories</h4>
+    <section className="category-cont">
+      {/* <h4>Categories</h4> */}
       <div className="category-list">
         {categories.map((ele, index) => (
           <label htmlFor={ele} key={index}>

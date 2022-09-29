@@ -2,10 +2,10 @@
 function PriceFilter({ ascending, descending }) {
   return (
     <section className="price">
-      <h4>Price</h4>
+      {/* <h4>Price</h4> */}
       <div className="range">
-        <button type="button" onClick={descending}>Highest</button>
-        <button type="button" onClick={ascending}>Lowest</button>
+        <button type="button" className="high" onClick={descending}>Highest</button>
+        <button type="button" className="low" onClick={ascending}>Lowest</button>
       </div>
     </section>
   );
