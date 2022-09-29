@@ -28,11 +28,17 @@
   padding-right: 10rem;
 }
 
-h1, .price, .description, .quantity {
+h1,
+.price,
+.description,
+.quantity {
   padding-bottom: 1.5rem;
 }
 
-.price, .category, .description, .quantity {
+.price,
+.category,
+.description,
+.quantity {
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -49,37 +55,27 @@ i {
   cursor: pointer;
 }
 
-/* -------------------------- */
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #000;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  position: relative;
-  animation: pulse 1s linear infinite;
-}
-.loader:after {
-  content: '';
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  border: 5px solid #000;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  animation: scaleUp 1s linear infinite;
+.cart-info {
+  width: 100%;
 }
 
-@keyframes scaleUp {
-  0% { transform: translate(-50%, -50%) scale(0) }
-  60% , 100% { transform: translate(-50%, -50%)  scale(1)}
+.cart-product button {
+  height: 0;
+  border: 0;
 }
-@keyframes pulse {
-  0% , 60% , 100%{ transform:  scale(1) }
-  80% { transform:  scale(1.2)}
+
+.fa-trash {
+  height: 100%;
+}
+
+.not-authorized {
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.not-authorized a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #006637;
 }

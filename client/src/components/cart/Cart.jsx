@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import '../../style/cart.css';
 import Header from '../landingPage/Header';
@@ -36,7 +37,15 @@ function Cart() {
     }).catch((err) => console.log(err));
   };
 
-  if (!data) return <div>Loading ...</div>;
+  if (!data) {
+    return (
+      <div className="not-authorized">
+        You are  not authorized to this page!!
+        <br />
+        <Link to="/login">Go to login in</Link>
+      </div>
+    );
+  }
 
   return (
     <>
