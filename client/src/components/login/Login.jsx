@@ -40,7 +40,7 @@ function Login() {
 
           Toast.fire({
             icon: 'success',
-            title: 'Signed up successfully',
+            title: 'Logged in successfully',
           });
           navigate('/');
         }
