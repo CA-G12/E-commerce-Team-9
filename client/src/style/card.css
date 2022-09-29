@@ -18,38 +18,37 @@
 section.container {
   width: 100%;
   margin: 2rem 3rem;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
 }
 
-section.container aside {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  margin-left: 2rem;
-  width: 100%;
+section.container .nav {
+  height: 10vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
   background: #FDFDFD;
   border: 1px solid #006637;
+  padding: 0 2rem;
   border-radius: 10px;
 }
 
 .cards {
-  grid-column-start: 6;
-  grid-column-end: 13;
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  /* align-items: center; */
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin: 3rem;
 }
 
 .cards .card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   width: 200px;
-  height: 350px;
   border: 1px solid #006637;
   border-radius: 5px;
 }
