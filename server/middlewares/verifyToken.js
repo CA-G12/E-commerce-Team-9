@@ -17,5 +17,20 @@ const verifyToken = (req, res, next) => {
     });
   }
 };
+const verifyTokenForLogout = (req, res, next) => {
+  const { token } = req.cookies;
 
-module.exports = verifyToken;
+  if (!token) {
+    req.token = false;
+    next();
+  } else {
+    verify(token, SECRET_KEY, (err, decoded) => {
+      if (err) { res.status(302).json({ message: 'Token is not found' }); } else {
+        req.token = decoded;
+        next();
+      }
+    });
+  }
+};
+
+module.exports = { verifyToken, verifyTokenForLogout };

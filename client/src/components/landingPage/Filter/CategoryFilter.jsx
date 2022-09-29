@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 const categories = [
   'all',
@@ -14,8 +15,8 @@ function CategoryFilter({ changeCategory, category }) {
     <section className="category">
       <h4>Categories</h4>
       <div className="category-list">
-        {categories.map((ele) => (
-          <label htmlFor={ele} key={ele.id}>
+        {categories.map((ele, index) => (
+          <label htmlFor={ele} key={index}>
             <input
               type="radio"
               name="categories"
