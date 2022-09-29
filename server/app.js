@@ -1,3 +1,4 @@
+const { join } = require('path')
 const express = require('express');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
@@ -12,10 +13,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.disable('x-powered-by');
 
-// app.use(express.static(join(__dirname, '..', 'client', 'build')));
-app.set('port', process.env.PORT || 4000);
 
 app.use('/api/v1', router);
+
+app.use(express.static(join(__dirname, '..', 'client', 'build'))); 
+app.get('*', (req, res)=>{
+  res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'))
+})
+
+app.set('port', process.env.PORT || 4000);
+
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
