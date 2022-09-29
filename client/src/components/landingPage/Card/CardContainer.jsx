@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 import '../../../style/card.css';
 
 function CardContainer({ data, category }) {
-  if (!data) return <div>Loading...</div>;
+  // if (!data) return <div>Loading...</div>;
 
   return (
     <div className="cards">

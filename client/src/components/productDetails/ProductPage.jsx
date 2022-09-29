@@ -1,10 +1,10 @@
-/* eslint-disable no-alert */
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import '../../style/details.css';
 import Header from '../landingPage/Header';
+import Spinner from '../handleErros/Spinner';
 
 function ProductDetails() {
   const [data, setData] = useState(null);
@@ -48,7 +48,7 @@ function ProductDetails() {
       }
     });
   };
-  if (!data) return <div>Loading ...</div>;
+  if (!data) return <Spinner />;
   return (
     <>
       <Header />

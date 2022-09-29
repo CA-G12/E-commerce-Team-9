@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const bcrypt = require('bcrypt');
 const { CustomError, generateToken } = require('../../utils/helpers');
 const { loginQuery } = require('../../database/queries');
